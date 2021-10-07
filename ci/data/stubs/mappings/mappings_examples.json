@@ -1,53 +1,5 @@
 {
     "mappings": [{
-        "id": "d47842c1-37fb-4a0a-b77d-ebc9319a0c4a",
-        "request": {
-            "url": "/cadastro/pf",
-            "method": "GET",
-            "bodyPatterns": [{
-                "equalToJosn": {
-                    "id": 123,
-                    "flag": true
-                }
-            }]
-        },
-        "response": {
-            "status": 201,
-            "jsonBody": {
-                "id": "123456789",
-                "status": "OK"
-            }
-        },
-        "headers": {
-            "Content-Type": "aplication/json"
-        }
-    }, {
-        "id": "e29afdde-e627-4087-89d2-64cdbc6cdd2e",
-        "request": {
-            "url": "/cadastro/pj",
-            "method": "GET",
-            "bodyPatterns": [{
-                "equalToJosn": {
-                    "id": 123,
-                    "flag": true
-                }
-            }]
-        },
-        "response": {
-            "status": 201,
-            "jsonBody": {
-                "id": "2357",
-                "status": "OK"
-            }
-        },
-        "headers": {
-            "Content-Type": "aplication/json"
-        }
-    }]
-}
-
-felipe.costa(Sofist) 5: 54 PM {
-    "mappings": [{
             "id": "4b236fea-82d2-450d-93c4-f2dce2f4e31e",
             "request": {
                 "method": "GET",
