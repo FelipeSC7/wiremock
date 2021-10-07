@@ -1,0 +1,9 @@
+FROM holomekc/wiremock-gui AS base
+
+EXPOSE 8080 8443
+
+COPY .ci/data/stubs/ /home/wiremock/storage/
+
+WORKDIR /home/wiremock/storage
+
+FROM base AS final

@@ -1,0 +1,202 @@
+{
+    "mappings": [{
+        "id": "d47842c1-37fb-4a0a-b77d-ebc9319a0c4a",
+        "request": {
+            "url": "/cadastro/pf",
+            "method": "GET",
+            "bodyPatterns": [{
+                "equalToJosn": {
+                    "id": 123,
+                    "flag": true
+                }
+            }]
+        },
+        "response": {
+            "status": 201,
+            "jsonBody": {
+                "id": "123456789",
+                "status": "OK"
+            }
+        },
+        "headers": {
+            "Content-Type": "aplication/json"
+        }
+    }, {
+        "id": "e29afdde-e627-4087-89d2-64cdbc6cdd2e",
+        "request": {
+            "url": "/cadastro/pj",
+            "method": "GET",
+            "bodyPatterns": [{
+                "equalToJosn": {
+                    "id": 123,
+                    "flag": true
+                }
+            }]
+        },
+        "response": {
+            "status": 201,
+            "jsonBody": {
+                "id": "2357",
+                "status": "OK"
+            }
+        },
+        "headers": {
+            "Content-Type": "aplication/json"
+        }
+    }]
+}
+
+felipe.costa(Sofist) 5: 54 PM {
+    "mappings": [{
+            "id": "4b236fea-82d2-450d-93c4-f2dce2f4e31e",
+            "request": {
+                "method": "GET",
+                "url": "/some/thing"
+            },
+            "response": {
+                "status": 200,
+                "body": "Hello world!",
+                "headers": {
+                    "Content-Type": "text/plain"
+                }
+            }
+        },
+        {
+            "id": "3947fb2b-10b6-4361-b50f-a1c69760b6a0",
+            "request": {
+                "method": "GET",
+                "url": "/some"
+            },
+            "response": {
+                "status": 200,
+                "statusMessage": "Everything was just fine!"
+            }
+        },
+        {
+            "id": "10292e8b-0660-44ed-b37c-d714f4499b6b",
+            "request": {
+                "method": "GET",
+                "url": "/whatever"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "Content-Type": "text/plain",
+                    "Set-Cookie": ["session_id=91837492837", "split_test_group=B"],
+                    "Cache-Control": "no-cache"
+                }
+            }
+        },
+        {
+            "id": "0b87bb8f-19a8-4fb3-9059-67f81633e0fc",
+            "request": {
+                "method": "GET",
+                "url": "/body"
+            },
+            "response": {
+                "status": 200,
+                "body": "Literal text to put in the body"
+            }
+        },
+        {
+            "id": "82037c8f-1a95-4329-a6be-f4ad70d9b16e",
+            "request": {
+                "method": "GET",
+                "url": "/binary-body"
+            },
+            "response": {
+                "status": 200,
+                "base64Body": "WUVTIElOREVFRCE="
+            }
+        },
+        {
+            "id": "765dd51f-5dc8-4e39-947f-4c3f420fcef9",
+            "request": {
+                "method": "GET",
+                "urlPathPattern": "/your/([a-z]*)"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "status": "OK"
+                },
+                "headers": {
+                    "Content-Type": "aplication/json"
+                }
+            }
+        },
+        {
+            "id": "00bdf027-ccaa-4800-942e-2cfe683ed864",
+            "request": {
+                "method": "GET",
+                "urlPathPattern": "/yours"
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "status": "OK"
+                },
+                "headers": {
+                    "Content-Type": "aplication/json"
+                }
+            }
+        },
+        {
+            "id": "7f234cc2-7b26-46f0-9c94-7a2f4ccd112b",
+            "request": {
+                "method": "GET",
+                "url": "/name",
+                "bodyPatterns": [{
+                    "matchesJsonPath": "$.name"
+                }]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "status": "OK"
+                },
+                "headers": {
+                    "Content-Type": "aplication/json"
+                }
+            }
+        },
+        {
+            "id": "198a7b9e-8bc3-4604-b656-0619194a15d7",
+            "request": {
+                "method": "GET",
+                "url": "/things/name",
+                "bodyPatterns": [{
+                    "matchesJsonPath": "$.things[?(@.name == 'RequiredThing')]"
+                }]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "status": "OK"
+                },
+                "headers": {
+                    "Content-Type": "aplication/json"
+                }
+            }
+        },
+        {
+            "id": "1d16afc3-1147-40fa-9d34-02902871adad",
+            "request": {
+                "method": "GET",
+                "url": "/things/2",
+                "bodyPatterns": [{
+                    "matchesJsonPath": "$[?(@.things.size() == 2)]"
+                }]
+            },
+            "response": {
+                "status": 200,
+                "jsonBody": {
+                    "status": "OK"
+                },
+                "headers": {
+                    "Content-Type": "aplication/json"
+                }
+            }
+        }
+    ]
+}

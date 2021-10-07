@@ -1,0 +1,8 @@
+version: "3"
+services:
+  wiremock:
+    imagem: wiremock
+    host: "wiremock"
+    ports:
+      - 8080:8080
+      - 8443:8443
